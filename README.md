@@ -1,3 +1,6 @@
+This is a game that tests your arithmetic skills by giving you 2-4 integers and a target integer where you have to ge to the target integer using basic operators.
+Here is an example, 0,0 and the target is 0. The user has to type "0+0", "0-0", or "0\*0" to get a point.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
