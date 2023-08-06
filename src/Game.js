@@ -16,8 +16,6 @@ export default function Game() {
     setNum2(Math.ceil(Math.random() * 10));
     setTarget(Math.ceil(Math.random() * 10));
     setAnswer("");
-    setStartGame(false);
-    setGameOver(false);
   };
 
   const submit = (e) => {
@@ -48,10 +46,12 @@ export default function Game() {
   const startGameHandler = () => {
     generateQuestion();
     setStartGame(true);
+    setGameOver(false);
   };
 
   // Function to handle timer completion
   const handleTimerComplete = () => {
+    console.log(`Game Over! Final score: ${score}`);
     setGameOver(true);
   };
 
@@ -59,7 +59,7 @@ export default function Game() {
     <div>
       {startGame && !gameOver && (
         <>
-          <Timer max={60} onComplete={handleTimerComplete} />
+          <Timer max={10} onComplete={handleTimerComplete} />
           <form onSubmit={submit}>
             <div>
               <label>
@@ -84,7 +84,6 @@ export default function Game() {
           START GAME
         </button>
       )}
-      {gameOver && <p>Game Over! Final score: {score}</p>}
     </div>
   );
 }
