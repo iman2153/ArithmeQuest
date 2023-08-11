@@ -32,6 +32,7 @@ export default function Game() {
 
     // Extracting the numbers and operator from the input string
     const [n1, operator, n2] = answer.split(/\s*([-+])\s*/);
+    console.log(operator);
     const solutions = solve(+n1, +n2, +target);
 
     // Check if the answer is correct by calling the solve function and checking if the user's input is in the set of solutions
@@ -59,7 +60,7 @@ export default function Game() {
     <div>
       {startGame && !gameOver && (
         <>
-          <Timer max={10} onComplete={handleTimerComplete} />
+          <Timer max={10} score = {score} onComplete={handleTimerComplete} />
           <form onSubmit={submit}>
             <div>
               <label>
@@ -84,6 +85,7 @@ export default function Game() {
           START GAME
         </button>
       )}
+      <button type="submit">Login</button>
     </div>
   );
 }
