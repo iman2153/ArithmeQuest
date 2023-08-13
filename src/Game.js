@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import solve from "./Solve"; // Import the solve function from Solve.js
 import Timer from "./Timer";
-
+import "./App.css"
 export default function Game() {
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
@@ -57,10 +57,11 @@ export default function Game() {
   };
 
   return (
-    <div>
+    <div className="center-container">
+      
       {startGame && !gameOver && (
         <>
-          <Timer max={10} score = {score} onComplete={handleTimerComplete} />
+          <Timer max={10} score={score} onComplete={handleTimerComplete} />
           <form onSubmit={submit}>
             <div>
               <label>
@@ -72,20 +73,25 @@ export default function Game() {
                 type="text"
               />
             </div>
-            <button type="submit">check</button>
+            <button className="game-button" type="submit">
+              Check
+            </button>
           </form>
-          <button type="button" onClick={generateQuestion}>
-            SKIP
+          <button className="game-button" onClick={generateQuestion}>
+            Skip
           </button>
-          <p>score: {score}</p>
+          <p className="score">Score: {score}</p>
         </>
       )}
       {!startGame && (
-        <button type="button" onClick={startGameHandler}>
-          START GAME
+        <button className="start-button" onClick={startGameHandler}>
+          Start Game
         </button>
       )}
-      <button type="submit">Login</button>
+      <button className="login-button" type="submit">
+        Login
+      </button>
     </div>
   );
+  
 }
