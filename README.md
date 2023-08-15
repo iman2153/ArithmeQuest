@@ -3,6 +3,13 @@ Here is an example, 0,0 and the target is 0. The user has to type "0+0", "0-0", 
 
 # Getting Started with Create React App
 
+you need to npm install firebase or yarn add firebase for it to work,
+
+1. Add a file in src config/Fire.js
+2. Copy paste the code into it but for your own testing create your own firebase account and generate your own firebase config.
+3. It has two options for either a simple addition game or the arithmetic game
+4.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
